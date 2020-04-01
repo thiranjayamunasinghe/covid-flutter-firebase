@@ -1,3 +1,4 @@
+import 'package:covid/home.dart';
 import 'package:flutter/material.dart';
 import './navigationMenu.dart';
 
@@ -9,11 +10,19 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
         debugShowCheckedModeBanner: false,
         home: Scaffold(
-          appBar: AppBar(
-            title: Text('Covid'),
-            backgroundColor: Colors.red,
+          // appBar: AppBar(
+          //   title: Text('Loaned Money Tracker'),
+          //   backgroundColor: Colors.transparent,
+          // ),
+          backgroundColor: Color(0xFF4dd0e1),
+          body: Home(),
+          floatingActionButton: FloatingActionButton(
+            onPressed: () {
+              print('floating');
+            },
+            child: Icon(Icons.add),
+            backgroundColor: Colors.deepOrange,
           ),
-          body: Center(child: NavigationMenu()),
         ));
   }
 }

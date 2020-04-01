@@ -17,72 +17,67 @@ class RegisterState extends State<Register> {
         backgroundColor: Colors.red,
       ),
       body: Center(
-        child: RaisedButton(
-            onPressed: () {
-              Navigator.pop(context);
-            },
-            child: Form(
-              key: _formKey,
-              child: Column(
-                children: <Widget>[
-                  Padding(
-                    padding: EdgeInsets.all(20.0),
-                  ),
-                  Container(
-                    padding: EdgeInsets.all(10),
-                    child: TextFormField(
-                      autofocus: true,
-                      onSaved: (input) => _email = input,
-                      decoration: InputDecoration(
-                        border: OutlineInputBorder(),
-                        labelText: 'Email',
-                      ),
-                    ),
-                  ),
-                  Container(
-                    padding: EdgeInsets.all(10),
-                    child: TextFormField(
-                      onSaved: (input) => _contactNo = input,
-                      decoration: InputDecoration(
-                        border: OutlineInputBorder(),
-                        labelText: 'Contact No.',
-                      ),
-                      keyboardType: TextInputType.phone,
-                    ),
-                  ),
-                  Container(
-                    padding: EdgeInsets.all(10),
-                    child: TextFormField(
-                      onSaved: (input) => _password = input,
-                      decoration: InputDecoration(
-                        border: OutlineInputBorder(),
-                        labelText: 'Password',
-                      ),
-                    ),
-                  ),
-                  Container(
-                    padding: EdgeInsets.all(10),
-                    child: TextFormField(
-                      onSaved: (input) => __cPassword = input,
-                      decoration: InputDecoration(
-                        border: OutlineInputBorder(),
-                        labelText: 'Confirm Password',
-                      ),
-                    ),
-                  ),
-                  Container(
-                    padding: EdgeInsets.all(10),
-                    child: RaisedButton(
-                      color: Colors.red,
-                      onPressed: () => signUp(),
-                      child: new Text('Register'),
-                      disabledColor: Colors.grey,
-                    ),
-                  ),
-                ],
+          child: Form(
+        key: _formKey,
+        child: Column(
+          children: <Widget>[
+            Padding(
+              padding: EdgeInsets.all(20.0),
+            ),
+            Container(
+              padding: EdgeInsets.all(10),
+              child: TextFormField(
+                autofocus: true,
+                onSaved: (input) => _email = input,
+                decoration: InputDecoration(
+                  border: OutlineInputBorder(),
+                  labelText: 'Email',
+                ),
               ),
-            )),
-      ),
+            ),
+            Container(
+              padding: EdgeInsets.all(10),
+              child: TextFormField(
+                onSaved: (input) => _contactNo = input,
+                decoration: InputDecoration(
+                  border: OutlineInputBorder(),
+                  labelText: 'Contact No.',
+                ),
+                keyboardType: TextInputType.phone,
+              ),
+            ),
+            Container(
+              padding: EdgeInsets.all(10),
+              child: TextFormField(
+                onSaved: (input) => _password = input,
+                decoration: InputDecoration(
+                  border: OutlineInputBorder(),
+                  labelText: 'Password',
+                ),
+              ),
+            ),
+            Container(
+              padding: EdgeInsets.all(10),
+              child: TextFormField(
+                onSaved: (input) => __cPassword = input,
+                decoration: InputDecoration(
+                  border: OutlineInputBorder(),
+                  labelText: 'Confirm Password',
+                ),
+              ),
+            ),
+            Container(
+              padding: EdgeInsets.all(10),
+              child: RaisedButton(
+                color: Colors.red,
+                onPressed: () => signUp(),
+                child: new Text('Register'),
+                disabledColor: Colors.grey,
+              ),
+            ),
+          ],
+        ),
+      )),
     );
   }
 

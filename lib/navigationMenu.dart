@@ -24,30 +24,42 @@ class NavigationMenuState extends State<NavigationMenu> {
           padding: EdgeInsets.all(20.0),
         ),
         Text(currentText),
-        RaisedButton(
-          color: Colors.red,
-          onPressed: () => goToLogin(context),
-          child: new Text('Login'),
-          disabledColor: Colors.grey,
-        ),
-        RaisedButton(
-          color: Colors.red,
-          onPressed: () {
-            Navigator.push(
-              context,
-              MaterialPageRoute(builder: (context) => Register()),
-            );
-          },
-          child: new Text('Register'),
-          disabledColor: Colors.grey,
-        ),
-        RaisedButton(
-          color: Colors.red,
-          onPressed: () => goToProfile(context),
-          child: new Text('Profile'),
-          disabledColor: Colors.grey,
-        ),
+        loginBtn(),
+        registerBtn(),
+        profileBtn(),
       ],
+    );
+  }
+
+  Widget loginBtn() {
+    return RaisedButton(
+      color: Colors.red,
+      onPressed: () => goToLogin(context),
+      child: new Text('Login'),
+      disabledColor: Colors.grey,
+    );
+  }
+
+  Widget registerBtn() {
+    return RaisedButton(
+      color: Colors.red,
+      onPressed: () {
+        Navigator.push(
+          context,
+          MaterialPageRoute(builder: (context) => Register()),
+        );
+      },
+      child: new Text('Register'),
+      disabledColor: Colors.grey,
+    );
+  }
+
+  Widget profileBtn() {
+    return RaisedButton(
+      color: Colors.red,
+      onPressed: () => goToProfile(context),
+      child: new Text('Profile'),
+      disabledColor: Colors.grey,
     );
   }
 

@@ -19,62 +19,57 @@ class LoginState extends State<Login> {
         backgroundColor: Colors.red,
       ),
       body: Center(
-        child: RaisedButton(
-          onPressed: () {
-            Navigator.pop(context);
-          },
-          child: Form(
-            key: _formKey,
-            child: Column(
-              children: <Widget>[
-                Padding(
-                  padding: EdgeInsets.all(20.0),
-                ),
-                Container(
-                  padding: EdgeInsets.all(10),
-                  child: TextFormField(
-                    validator: (input) {
-                      if (input.isEmpty) {
-                        return 'Please type an email';
-                      }
-                      return null;
-                    },
-                    onSaved: (input) => _email = input,
-                    autofocus: true,
-                    decoration: InputDecoration(
-                      border: OutlineInputBorder(),
-                      labelText: 'Email',
-                    ),
+        child: Form(
+          key: _formKey,
+          child: Column(
+            children: <Widget>[
+              Padding(
+                padding: EdgeInsets.all(20.0),
+              ),
+              Container(
+                padding: EdgeInsets.all(10),
+                child: TextFormField(
+                  validator: (input) {
+                    if (input.isEmpty) {
+                      return 'Please type an email';
+                    }
+                    return null;
+                  },
+                  onSaved: (input) => _email = input,
+                  autofocus: true,
+                  decoration: InputDecoration(
+                    border: OutlineInputBorder(),
+                    labelText: 'Email',
                   ),
                 ),
-                Container(
-                  padding: EdgeInsets.all(10),
-                  child: TextFormField(
-                    validator: (input) {
-                      if (input.length < 6) {
-                        return 'Your password neeeds to be atleast 6 characters';
-                      }
-                      return null;
-                    },
-                    onSaved: (input) => _password = input,
-                    decoration: InputDecoration(
-                      border: OutlineInputBorder(),
-                      labelText: 'Password',
-                    ),
-                    obscureText: true,
+              ),
+              Container(
+                padding: EdgeInsets.all(10),
+                child: TextFormField(
+                  validator: (input) {
+                    if (input.length < 6) {
+                      return 'Your password neeeds to be atleast 6 characters';
+                    }
+                    return null;
+                  },
+                  onSaved: (input) => _password = input,
+                  decoration: InputDecoration(
+                    border: OutlineInputBorder(),
+                    labelText: 'Password',
                   ),
+                  obscureText: true,
                 ),
-                Container(
-                  padding: EdgeInsets.all(10),
-                  child: RaisedButton(
-                    color: Colors.red,
-                    onPressed: () => signIn(),
-                    child: new Text('Login'),
-                    disabledColor: Colors.grey,
-                  ),
+              ),
+              Container(
+                padding: EdgeInsets.all(10),
+                child: RaisedButton(
+                  color: Colors.red,
+                  onPressed: () => signIn(),
+                  child: new Text('Login'),
+                  disabledColor: Colors.grey,
                 ),
-              ],
-            ),
+              ),
+            ],
           ),
         ),
       ),
