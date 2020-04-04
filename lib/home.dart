@@ -1,8 +1,5 @@
-import 'package:covid/lend.dart';
-import 'package:covid/login.dart';
-import 'package:covid/owe.dart';
-import 'package:covid/register.dart';
-import 'package:covid/test.dart';
+import 'package:covid/lend2.dart';
+import 'package:covid/owe2.dart';
 import 'package:flutter/material.dart';
 import 'package:line_awesome_icons/line_awesome_icons.dart';
 
@@ -20,7 +17,6 @@ class HomeState extends State<Home> {
         Padding(
           padding: EdgeInsets.only(left: 40.0),
           child: Row(
-            mainAxisAlignment: MainAxisAlignment.start,
             children: <Widget>[
               SizedBox(
                 height: 200.0,
@@ -74,7 +70,8 @@ class HomeState extends State<Home> {
                         child: ListView(
                           primary: true,
                           children: <Widget>[
-                            myBTN(context, 'Money You Lend to Friends', Lend()),
+                            myBTN(
+                                context, 'Money You Lend to Friends', Lend2()),
                             Divider(
                               color: Colors.brown[200],
                               height: 50,
@@ -82,7 +79,7 @@ class HomeState extends State<Home> {
                               endIndent: 50,
                               indent: 50,
                             ),
-                            myBTN(context, 'Money You Owe to Friends', Owe()),
+                            myBTN(context, 'Money You Owe to Friends', Owe2()),
                           ],
                         ))),
               ],
